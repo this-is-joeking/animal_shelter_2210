@@ -12,11 +12,18 @@ class Shelter
   end
 
 # come_pets = [] not sure why this didn't work, changed to attribute and it worked
-
   def call_pets
     @pets.each do |pet|
       @come_pets << (pet + '!')
     end
     return @come_pets
+  end
+
+  def over_capacity?
+    if @pets.length > capacity
+      return true
+    else
+      return false
+    end
   end
 end
