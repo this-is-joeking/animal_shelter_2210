@@ -28,7 +28,9 @@ class Shelter
   end
 
   def adopt
-    @pets.shift
+    while @pets.length > @capacity
+      @pets.shift
+    end
   end
 end
 
