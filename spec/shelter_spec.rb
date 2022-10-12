@@ -84,4 +84,18 @@ RSpec.describe Shelter do
     end
   end
 
+  describe '#adopt' do
+    it 'removes a pet from the shelter' do
+
+      shelter =Shelter.new("Denver Animal Shelter", 3)
+      shelter.add_pet('Salem')
+      shelter.add_pet('Beethoven')
+      shelter.add_pet('Spot')
+      shelter.add_pet('Jonesy')
+
+      shelter.adopt
+
+      expect(shelter.over_capacity?).to eq false
+    end
+  end
 end
